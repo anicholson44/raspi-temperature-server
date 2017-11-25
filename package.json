@@ -1,0 +1,15 @@
+{
+  "name": "temperature-server",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "recharts": "^1.0.0-beta.5",
+    "temp-units-conv": "^0.1.2",
+    "victory": "^0.24.2"
+  }
+}
