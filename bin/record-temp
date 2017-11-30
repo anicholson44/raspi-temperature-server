@@ -1,0 +1,2 @@
+DEV=`find /sys/bus/w1/devices/28*`
+mongo localhost:3001/meteor --eval "var a=cat('$DEV/w1_slave').split(' '); var t=Number(a[a.length-1].split('=')[1].replace(/\n/,'')/1000); db.temperatureLog.insert({date: new Date(), temperature: t})"
