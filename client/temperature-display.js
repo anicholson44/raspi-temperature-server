@@ -23,6 +23,11 @@ export class TemperatureDisplay extends React.PureComponent {
     return currentTempLog ? tuc.c2f(currentTempLog.temperature) : null;
   }
 
+  averageTemp() {
+    const averageTemp = this.props.temperatureLogs.reduce((sum, log) => (sum + log.temperature), 0)/this.props.temperatureLogs.length;
+    return averageTemp ? tuc.c2f(averageTemp) : null;
+  }
+
   render() {
     const { temperatureLogs } = this.props;
     let firstTempLogDate, lastTempLogDate;
@@ -44,6 +49,8 @@ export class TemperatureDisplay extends React.PureComponent {
         <dl>
             <dt>Current Temperature</dt>
             <dd>{this.currentTemp()} F</dd>
+            <dt>Average Temperature></dt>
+            <dd>{this.averageTemp()} F</dd>
         </dl>
         <DateRange 
           startDate={startDate} 
