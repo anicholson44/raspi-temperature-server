@@ -1,7 +1,7 @@
 SERVICE_DIR=/lib/systemd/system/
 SCRIPT_PATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
-cat 'dtoverlay=w1-gpio' | sudo tee -a /boot/config.txt > /dev/null
+echo 'dtoverlay=w1-gpio' | sudo tee -a /boot/config.txt > /dev/null
 sudo modprobe w1-gpio
 sudo modprobe w1-therm
 
