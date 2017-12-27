@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 ExecStart=/usr/bin/meteor
-WorkingDirectory=/home/pi/workspace/raspi-temperature-server
+WorkingDirectory=/home/pi/raspi-temperature-server
 StandardOutput=inherit
 StandardError=inherit
 Restart=always
